@@ -1,0 +1,2 @@
+2025-12-08 17:53:17 - Talento Tech Automation - INFO - Probando login con usuario: standard_user, password: secret_sauce, se espera que funcione: True
+2025-12-08 17:53:26 - Talento Tech Automation - INFO - Probando login con usuario: admin, password: 1234, se espera que funcione: False
