@@ -12,3 +12,11 @@ def driver():
 def logged_in_driver(driver,user,password):
     LoginPage(driver).open_page().do_login(user,password)
     return driver
+# Fixture url base para API tests
+@pytest.fixture
+def url_base():
+    return "https://reqres.in/api/users"
+# Fixture headers para API tests
+@pytest.fixture
+def header_request():
+    return {"x-api-key": "reqres_6f749bc69df646aeaccac5183440a6d1"}
