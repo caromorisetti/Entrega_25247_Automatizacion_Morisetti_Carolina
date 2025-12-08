@@ -5,8 +5,7 @@ import time
 
 class LoginPage:
     # URL
-    URL = "https://www.saucedemo.com/"
-    
+    URL = "https://www.saucedemo.com/"    
     _USERNAME_INPUT = (By.ID, "user-name")
     _PASSWORD_INPUT = (By.ID, "password")
     _LOGIN_BUTTON = (By.ID, "login-button")

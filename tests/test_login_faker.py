@@ -3,8 +3,14 @@ from selenium import webdriver
 import pytest
 from pages.login_page import LoginPage
 from utils.data import csv_login
-# Prueba para comportamiento del login usando credenciales de un archivo CSV
-@pytest.mark.parametrize("user,password,should_work",csv_login("data/data_login.csv"))
+from faker import Faker
+# Prueba para comportamiento del login usando credenciales falsas generadas automáticamente con Faker
+# Inicializamos Faker
+fake = Faker()
+@pytest.mark.parametrize("user,password,should_work", [
+    (fake.user_name(), fake.password(), 'false'),
+    (fake.user_name(), fake.password(), 'false')
+])
 def test_login(logged_in_driver,user,password,should_work):
     driver = logged_in_driver    
     if should_work == 'true':
@@ -12,3 +18,4 @@ def test_login(logged_in_driver,user,password,should_work):
     elif should_work == 'false':
         message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']").text
         assert "Epic sadface: Username and password do not match any user in this service" in message, "El mensaje de error no es correcto"
+    

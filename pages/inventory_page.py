@@ -33,6 +33,16 @@ class InventoryPage:
         products = self.wait.until(EC.visibility_of_all_elements_located(self._INVENTORY_ITEM))
         buttons = products[0].find_elements(*self._BUTTON_ADD_TO_CART)
         buttons[0].click()
+    # Método para agregar producto por nombre
+    def add_product_by_name(self,name_product):
+        products = self.driver.find_elements(*self._INVENTORY_ITEM)   
+        for product in products:
+            name = product.find_element(*self._INVENTORY_ITEM_NAME).text.strip()
+            if name.strip() == name_product.strip():
+                button = product.find_element(*self._BUTTON_ADD_TO_CART)
+                button.click()
+                return self
+        raise Exception(f"No se encontro el producto {name_product}")
     #Método para abrir carrito de compras
     def open_shopping_cart(self):
         cart_link = self.wait.until(EC.element_to_be_clickable(self._SHOPPING_CART_LINK))

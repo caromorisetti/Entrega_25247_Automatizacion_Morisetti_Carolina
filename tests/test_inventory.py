@@ -1,8 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from pages.ineventory_page import InventoryPage
+from pages.inventory_page import InventoryPage
 import pytest
-
+# Prueba para agregar un producto al carrito y validar el conteo e inventario
 @pytest.mark.parametrize("user,password", [("standard_user","secret_sauce")])
 def test_inventory(logged_in_driver,user,password):
      try: 
