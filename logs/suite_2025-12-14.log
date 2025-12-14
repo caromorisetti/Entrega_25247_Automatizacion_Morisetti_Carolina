@@ -1,0 +1,52 @@
+2025-12-14 18:30:47 - Talento Tech Automation - INFO - Solicitud GET a https://reqres.in/api/users
+2025-12-14 18:30:48 - Talento Tech Automation - INFO - Status code: 200
+2025-12-14 18:30:48 - Talento Tech Automation - INFO - Validando id dentro del usuario
+2025-12-14 18:30:48 - Talento Tech Automation - INFO - Solicitud POST a https://reqres.in/api/users
+2025-12-14 18:30:49 - Talento Tech Automation - INFO - Status code: 201
+2025-12-14 18:30:49 - Talento Tech Automation - INFO - Validando id dentro del usuario
+2025-12-14 18:30:49 - Talento Tech Automation - INFO - Solicitud PUT a https://reqres.in/api/users
+2025-12-14 18:30:50 - Talento Tech Automation - INFO - Status code: 200
+2025-12-14 18:30:50 - Talento Tech Automation - INFO - Validando id dentro del usuario
+2025-12-14 18:30:50 - Talento Tech Automation - INFO - Solicitud DELETE a https://reqres.in/api/users
+2025-12-14 18:30:51 - Talento Tech Automation - INFO - Status code: 204
+2025-12-14 18:30:58 - Talento Tech Automation - INFO - URL antes del login: https://www.saucedemo.com/
+2025-12-14 18:30:58 - Talento Tech Automation - INFO - Pagina Inventario URL: https://www.saucedemo.com/inventory.html
+2025-12-14 18:30:58 - Talento Tech Automation - INFO - Producto agregado al carrito.
+2025-12-14 18:30:58 - Talento Tech Automation - INFO - Pagina Carrito URL: https://www.saucedemo.com/cart.html
+2025-12-14 18:30:58 - Talento Tech Automation - INFO - Validacion exitosa: El carrito tiene 1 producto(s) agregado(s).
+2025-12-14 18:31:08 - Talento Tech Automation - INFO - URL antes del login: https://www.saucedemo.com/
+2025-12-14 18:31:09 - Talento Tech Automation - INFO - URL después del login: https://www.saucedemo.com/inventory.html
+2025-12-14 18:31:09 - Talento Tech Automation - INFO - Producto a agregar al carrito (desde JSON): Sauce Labs Backpack
+2025-12-14 18:31:09 - Talento Tech Automation - INFO - Abriendo carrito de compras
+2025-12-14 18:31:09 - Talento Tech Automation - INFO - Inicializando CartPage
+2025-12-14 18:31:09 - Talento Tech Automation - INFO - Producto validado correctamente en el carrito
+2025-12-14 18:31:20 - Talento Tech Automation - INFO - URL antes del login: https://www.saucedemo.com/
+2025-12-14 18:31:20 - Talento Tech Automation - INFO - URL después del login: https://www.saucedemo.com/inventory.html
+2025-12-14 18:31:20 - Talento Tech Automation - INFO - Producto a agregar al carrito (desde JSON): Sauce Labs Bike Light
+2025-12-14 18:31:20 - Talento Tech Automation - INFO - Abriendo carrito de compras
+2025-12-14 18:31:20 - Talento Tech Automation - INFO - Inicializando CartPage
+2025-12-14 18:31:20 - Talento Tech Automation - INFO - Producto validado correctamente en el carrito
+2025-12-14 18:31:30 - Talento Tech Automation - INFO - URL antes del login: https://www.saucedemo.com/
+2025-12-14 18:31:30 - Talento Tech Automation - INFO - URL después del login: https://www.saucedemo.com/inventory.html
+2025-12-14 18:31:30 - Talento Tech Automation - INFO - Producto a agregar al carrito (desde JSON): Sauce Labs Bolt T-Shirt
+2025-12-14 18:31:30 - Talento Tech Automation - INFO - Abriendo carrito de compras
+2025-12-14 18:31:30 - Talento Tech Automation - INFO - Inicializando CartPage
+2025-12-14 18:31:30 - Talento Tech Automation - INFO - Producto validado correctamente en el carrito
+2025-12-14 18:31:40 - Talento Tech Automation - INFO - URL actual antes del login: https://www.saucedemo.com/
+2025-12-14 18:31:40 - Talento Tech Automation - INFO - URL despues del login: https://www.saucedemo.com/inventory.html
+2025-12-14 18:31:40 - Talento Tech Automation - INFO - Página de inventario cargada
+2025-12-14 18:31:50 - Talento Tech Automation - INFO - Carrito inicialmente vacío validado
+2025-12-14 18:31:50 - Talento Tech Automation - INFO - Agregando un producto al carrito
+2025-12-14 18:31:50 - Talento Tech Automation - INFO - Producto agregado al carrito correctamente
+2025-12-14 18:32:01 - Talento Tech Automation - INFO - Probando login con usuario: standard_user, password: secret_sauce, se espera que funcione: True
+2025-12-14 18:32:11 - Talento Tech Automation - INFO - Probando login con usuario: admin, password: 1234, se espera que funcione: False
+2025-12-14 18:32:20 - Talento Tech Automation - INFO - Probando login con usuario: faith59, password: sG%2UG%u&G, se espera que funcione: false
+2025-12-14 18:32:21 - Talento Tech Automation - INFO - Ejecutando login inválido
+2025-12-14 18:32:22 - Talento Tech Automation - INFO - Verificando usuario y password invalidos
+2025-12-14 18:32:22 - Talento Tech Automation - INFO - Verificando que aparezca el mensaje de error correspondiente
+2025-12-14 18:32:22 - Talento Tech Automation - INFO - Mensaje de error recibido: Epic sadface: Username and password do not match any user in this service
+2025-12-14 18:32:30 - Talento Tech Automation - INFO - Probando login con usuario: abrown, password: #4CdPra6Y8, se espera que funcione: false
+2025-12-14 18:32:31 - Talento Tech Automation - INFO - Ejecutando login inválido
+2025-12-14 18:32:32 - Talento Tech Automation - INFO - Verificando usuario y password invalidos
+2025-12-14 18:32:32 - Talento Tech Automation - INFO - Verificando que aparezca el mensaje de error correspondiente
+2025-12-14 18:32:32 - Talento Tech Automation - INFO - Mensaje de error recibido: Epic sadface: Username and password do not match any user in this service
