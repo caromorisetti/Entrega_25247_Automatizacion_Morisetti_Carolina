@@ -32,7 +32,7 @@ class InventoryPage:
     def add_product_to_cart(self):
         products = self.wait.until(EC.visibility_of_all_elements_located(self._INVENTORY_ITEM))
         buttons = products[0].find_elements(*self._BUTTON_ADD_TO_CART)
-        buttons[0].click()
+        buttons.click()
     # Método para agregar producto por nombre
     def add_product_by_name(self,name_product):
         products = self.driver.find_elements(*self._INVENTORY_ITEM)   
