@@ -19,7 +19,7 @@ def driver():
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--headless=new")
         
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
     yield driver
     driver.quit()
 # Fixture para realizar login antes de cada test que lo requiera   
