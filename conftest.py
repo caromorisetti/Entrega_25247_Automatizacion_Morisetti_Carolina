@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
 from pages.login_page import LoginPage
+from selenium.webdriver.firefox.options import Options
 import pathlib
 from datetime import datetime
 # Carpeta donde se guarda screenshot
@@ -10,6 +11,14 @@ target.mkdir(parents=True, exist_ok=True)
 # Fixture para inicializar y cerrar el navegador
 @pytest.fixture
 def driver():
+    # Configuraciones Github Actions
+    options = Options()
+    options.add_argument("--incognito")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable=gpu")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--headless=new")
+        
     driver = webdriver.Firefox()
     yield driver
     driver.quit()
