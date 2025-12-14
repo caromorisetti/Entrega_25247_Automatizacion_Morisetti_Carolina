@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
 import pytest
-from pages.login_page import LoginPage
 from utils.data import csv_login
 from utils.logger import logger
 # Prueba para comportamiento del login usando credenciales de un archivo CSV

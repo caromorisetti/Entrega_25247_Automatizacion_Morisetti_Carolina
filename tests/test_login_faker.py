@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 import pytest
 from pages.login_page import LoginPage
-from pages.login_page import LoginPage
 from utils.logger import logger
 from utils.data import csv_login
 from faker import Faker
@@ -13,11 +12,13 @@ fake = Faker()
     (fake.user_name(), fake.password(), 'false'),
     (fake.user_name(), fake.password(), 'false')
 ])
-def test_login(logged_in_driver,user,password,should_work):
+def test_login(driver,user,password,should_work):
     logger.info(f"Probando login con usuario: {user}, password: {password}, se espera que funcione: {should_work}")
-    driver = logged_in_driver
-    logger.info(f"URL antes del login: {driver.current_url}")
-    LoginPage(driver).do_login(user,password)    
+    login_page = LoginPage(driver)
+    login_page.open_page()
+    logger.info("Ejecutando login inválido")
+    login_page.do_login(user, password)
+    logger.info("Verificando usuario y password invalidos")
     if should_work == 'true':
         assert "inventory" in driver.current_url, "No se redirigio al inventario"
         logger.info("El login fue exitoso")
