@@ -4,6 +4,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pytest
 from pages.inventory_page import InventoryPage
+from pages.login_page import LoginPage
+from utils.logger import logger
 from pages.cart_page import CartPage
 from utils.lector_json import read_json_products
 import time
@@ -14,6 +16,8 @@ RUTA_JSON = "data/products.json"
 def test_cart_json(logged_in_driver, user, password, product):
     try:
         driver = logged_in_driver
+        logger.info(f"URL antes del wait: {driver.current_url}")
+        LoginPage(driver).do_login(user,password)
         # Abrir la página de inventario
         inventory_page = InventoryPage(driver)
         # Agregar producto al carrito por nombre desde el JSON

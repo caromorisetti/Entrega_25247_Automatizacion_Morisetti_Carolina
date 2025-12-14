@@ -1,12 +1,16 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from pages.inventory_page import InventoryPage
+from pages.login_page import LoginPage
 import pytest
+from utils.logger import logger
 # Prueba para agregar un producto al carrito y validar el conteo e inventario
 @pytest.mark.parametrize("user,password", [("standard_user","secret_sauce")])
 def test_inventory(logged_in_driver,user,password):
      try: 
           driver = logged_in_driver
+          logger.info(f"URL actual antes del wait: {driver.current_url}")
+          LoginPage(driver).do_login(user,password)
           driver.implicitly_wait(3)
           inventory_page = InventoryPage(driver)
           # Verificamos que hay productos en inventario
