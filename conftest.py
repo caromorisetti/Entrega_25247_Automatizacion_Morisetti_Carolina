@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 from pages.login_page import LoginPage
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 import pathlib
 from datetime import datetime
 # Carpeta donde se guarda screenshot
