@@ -35,7 +35,7 @@ jobs:
 
       #5 Ejecutar Test
       - name: Run Test
-        run: python3 run_tests.py
+        run: python3 run_test.py
 
       #6 Subir artefactos (reporte + imagenes + logs)
       - name: Subir HTML report
