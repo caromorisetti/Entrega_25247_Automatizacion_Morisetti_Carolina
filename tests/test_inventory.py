@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from pages.inventory_page import InventoryPage
 from pages.login_page import LoginPage
+from selenium.webdriver.support.ui import WebDriverWait
 import pytest
 from utils.logger import logger
 # Prueba para agregar un producto al carrito y validar el conteo e inventario
@@ -23,6 +24,8 @@ def test_inventory(logged_in_driver,user,password):
           logger.info("Agregando un producto al carrito")
           # Agregamos un producto al carrito
           inventory_page.add_product_to_cart()
+          # Esperamos hasta que el carrito se actualice
+          WebDriverWait(driver, 5).until(lambda d: inventory_page.get_count_product() == 1)
           # Verificamos que el carrito tiene 1 producto
           assert inventory_page.get_count_product() == 1, "El carrito tiene 1 producto después de agregar"
           logger.info("Producto agregado al carrito correctamente")

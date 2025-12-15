@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
 import time
 # Clase Page Object para la página de inventario
 class InventoryPage:
@@ -8,12 +9,11 @@ class InventoryPage:
     URL = "https://www.saucedemo.com/inventory.html"
     # Selectores
     _INVENTORY_ITEM = (By.CLASS_NAME, "inventory_item")
-    _BUTTON_ADD_TO_CART = (By.CLASS_NAME, "btn_inventory")
+    _BUTTON_ADD_TO_CART = (By.CSS_SELECTOR, ".inventory_item button")
     _BUTTON_REMOVE_FROM_CART = (By.CLASS_NAME, "btn_inventory")
     _SHOPPING_CART_BADGE = (By.CLASS_NAME, "shopping_cart_badge")
     _INVENTORY_ITEM_NAME = (By.CLASS_NAME, "inventory_item_name")
     _SHOPPING_CART_LINK = (By.CLASS_NAME, "shopping_cart_link")
-    #_PRODUCT_NAME = (By.CLASS_NAME, "add-to-cart-sauce-labs-bolt-t-shirt") 
     # Constructor
     def __init__(self, driver):
         self.driver = driver
@@ -26,13 +26,13 @@ class InventoryPage:
         return products
     # Método para obtener los nombres de los productos
     def get_name_products(self):
-        products = self.driver.find_element(*self._INVENTORY_ITEM_NAME)
+        products = self.driver.find_element(self._INVENTORY_ITEM_NAME)
         return [product_name.text for product_name in products]
     # Método agregar producto al carrito
     def add_product_to_cart(self):
-        products = self.wait.until(EC.visibility_of_all_elements_located(self._INVENTORY_ITEM))
-        buttons = products[0].find_elements(*self._BUTTON_ADD_TO_CART)
-        buttons.click()
+        products = self.wait.until(EC.visibility_of_all_elements_located(self._INVENTORY_ITEM)) 
+        button_product = products[0].find_element(*self._BUTTON_ADD_TO_CART)
+        button_product.click()
     # Método para agregar producto por nombre
     def add_product_by_name(self,name_product):
         products = self.driver.find_elements(*self._INVENTORY_ITEM)   
@@ -50,8 +50,8 @@ class InventoryPage:
     # Método para verificar el carrito
     def get_count_product(self):
         try:
-            self.wait.until(EC.visibility_of_element_located(self. _SHOPPING_CART_BADGE)) 
-            count_cart = self.driver.find_element(*self. _SHOPPING_CART_BADGE)
-            return int(count_cart.text)
+            self.wait.until(EC.visibility_of_element_located(self._SHOPPING_CART_BADGE)) 
+            contador_carrito = self.driver.find_element(*self._SHOPPING_CART_BADGE)
+            return int(contador_carrito.text)
         except:
             return 0
