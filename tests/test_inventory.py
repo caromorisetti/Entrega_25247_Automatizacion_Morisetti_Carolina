@@ -13,7 +13,6 @@ def test_inventory(logged_in_driver,user,password):
           logger.info(f"URL actual antes del login: {driver.current_url}")
           LoginPage(driver).do_login(user,password)
           logger.info(f"URL despues del login: {driver.current_url}")
-          driver.implicitly_wait(3)
           inventory_page = InventoryPage(driver)
           logger.info("Página de inventario cargada")
           # Verificamos que hay productos en inventario

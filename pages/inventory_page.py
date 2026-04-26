@@ -49,9 +49,7 @@ class InventoryPage:
         cart_link.click()
     # Método para verificar el carrito
     def get_count_product(self):
-        try:
-            self.wait.until(EC.visibility_of_element_located(self._SHOPPING_CART_BADGE)) 
-            contador_carrito = self.driver.find_element(*self._SHOPPING_CART_BADGE)
-            return int(contador_carrito.text)
-        except:
+        elements = self.driver.find_elements(*self._SHOPPING_CART_BADGE)
+        if len(elements) == 0:
             return 0
+        return int(elements[0].text)
